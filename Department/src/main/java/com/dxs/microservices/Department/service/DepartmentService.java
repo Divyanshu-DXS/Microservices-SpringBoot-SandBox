@@ -14,16 +14,16 @@ import java.time.LocalDateTime;
 @Slf4j
 public class DepartmentService {
     @Autowired
-    DepartmentRepository repository;
+    DepartmentRepository departmentRepository;
 
     public Department saveDepartment(Department department){
 //        log.info(LocalDateTime.now()+"Inside DepartmentService -- saveDepartment");
 //        System.out.println("deparmtnet saved - service method");
-        return repository.save(department);
+        return departmentRepository.save(department);
     }
 
     public Department getDepartmentById(Long id){
 //        log.info(LocalDateTime.now()+"Inside DepartmentService -- getDepartmentById");
-        return repository.getById(id);
+        return departmentRepository.findById(id).get();
     }
 }
