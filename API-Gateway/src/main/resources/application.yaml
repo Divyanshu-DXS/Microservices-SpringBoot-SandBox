@@ -1,6 +1,17 @@
 spring:
   application:
     name: API-Gateway
+  cloud:
+    gateway:
+      routes:
+        - id: USERSERVICE
+          uri: lb://USERSERVICE
+          predicates:
+            - Path=/users/**
+        - id: DEPARTMENTSERVICE
+          uri: lb://DEPARTMENTSERVICE
+          predicates:
+            - Path=/departments/**
 
 server:
   port: 9191
