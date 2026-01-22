@@ -1,0 +1,12 @@
+ spring:
+  application:
+    name: Config-Server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/Divyanshu-DXS/Microservices_Config-Server
+          clone-on-start: true
+
+server:
+  port: 9296
